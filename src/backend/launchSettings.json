@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "ca-songoku": "StartDebugging",
+        "ca-freezer": "StartDebugging",
+        "ca-songoku-dapr": "StartWithoutDebugging",
+        "ca-freezer-dapr": "StartWithoutDebugging"
+      }
+    }
+  }
+}

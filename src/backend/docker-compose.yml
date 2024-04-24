@@ -1,0 +1,87 @@
+version: '3.4'
+
+services:
+  ca-songoku:
+    image: ${DOCKER_REGISTRY-}ca-songoku
+    build:
+      context: .
+      dockerfile: SonGokuApi/Dockerfile
+    container_name: ca-songoku
+    depends_on:
+      - prometheus
+      - zipkin
+
+  ca-songoku-dapr:
+    image: "daprio/daprd:1.13.0"
+    network_mode: "service:ca-songoku"
+    command: ["./daprd",
+      "--app-id", "ca-songoku",
+      "--app-port", "80",
+      "--dapr-http-port", "3601",
+      "--dapr-grpc-port", "60001",
+      "--components-path", "/components",
+      "--log-level", "debug",
+      "--dapr-http-max-request-size","16"
+      ]
+    volumes:
+      - "./dapr/components:/components"
+    depends_on:
+      - ca-songoku
+    container_name: ca-songoku-dapr
+
+  ca-freezer:
+    image: ${DOCKER_REGISTRY-}ca-freezer
+    build:
+      context: .
+      dockerfile: FreezerApi/Dockerfile
+    container_name: ca-freezer
+    depends_on:
+      - prometheus
+      - zipkin
+
+  ca-freezer-dapr:
+    image: "daprio/daprd:1.13.0"
+    network_mode: "service:ca-freezer"
+    command: ["./daprd",
+      "--app-id", "ca-freezer",
+      "--app-port", "80",
+      "--dapr-http-port", "3602",
+      "--dapr-grpc-port", "60002",
+      "--components-path", "/components",
+      "--log-level", "debug",
+      "--dapr-http-max-request-size","16"
+      ]
+    volumes:
+      - "./dapr/components:/components"
+    depends_on:
+      - ca-freezer
+    container_name: ca-freezer-dapr
+  
+  zipkin:
+    image: openzipkin/zipkin
+    container_name: zipkin
+    ports:
+      - 9411:9411
+  
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+    volumes:
+      - ./prometheus:/etc/prometheus
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=grafana
+    volumes:
+      - ./grafana/datasource:/etc/grafana/provisioning/datasources

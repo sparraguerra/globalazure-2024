@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TenkaichiBudokai": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7205"
+    }
+  }
+}

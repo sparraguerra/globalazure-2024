@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<InvariantGlobalization>false</InvariantGlobalization>
+		<UserSecretsId>FreezerApi</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerfileContext>.</DockerfileContext>
+		<DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<DocumentationFile>FreezerApi.xml</DocumentationFile>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.4" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.20.1" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+		<PackageReference Include="Dapr.Actors.AspNetCore" Version="1.13.0" />
+		<PackageReference Include="Dapr.AspNetCore" Version="1.13.0" />
+		<PackageReference Include="Dapr.Client" Version="1.13.0" />
+		<PackageReference Include="Dapr.Actors" Version="1.13.0" />
+		<PackageReference Include="Dapr.Extensions.Configuration" Version="1.13.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Common.Dapr\Common.Dapr.csproj" />
+	  <ProjectReference Include="..\Common.Diagnostics\Common.Diagnostics.csproj" />
+	  <ProjectReference Include="..\Common.Models\Common.Models.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="appsettings.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
+</Project>

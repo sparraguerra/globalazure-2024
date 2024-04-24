@@ -1,0 +1,17 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: genki-dama-storage
+  
+spec:
+  type: bindings.azure.storagequeues
+  version: v1
+  metadata:
+   - name: accountName
+     value: "[MyAccountName]"
+   - name: accountKey
+     value: "[MyAccountKey]" 
+   - name: queueName
+     value: "genki-dama"
+   - name: route
+     value: /genki-dama-storage

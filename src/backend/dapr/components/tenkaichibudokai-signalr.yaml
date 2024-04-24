@@ -1,0 +1,14 @@
+apiVersion: dapr.io/v1alpha1
+kind: Component
+
+metadata:
+  name: tenkaichibudokai
+
+spec:
+  type: bindings.azure.signalr
+  version: v1
+  metadata:
+  - name: connectionString
+    value: "[MySignalRConnectionString]"
+  - name: hub  
+    value: tenkaichibudokai

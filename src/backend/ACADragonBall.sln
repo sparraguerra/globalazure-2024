@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SonGokuApi", "SonGokuApi\SonGokuApi.csproj", "{35F2358C-0B48-408C-8D9E-46D8DFEE9BE2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FreezerApi", "FreezerApi\FreezerApi.csproj", "{5948ADFC-8457-40A4-8708-8B380EFA1A1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{96A5AC66-223B-4AA1-9EC5-3E1CA2D59AF9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Models", "Common.Models\Common.Models.csproj", "{9C2CDDEA-D9DA-408B-81F8-36B81BE570AE}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{796B55FA-2D35-4AAA-A742-0E004703C547}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dapr", "dapr", "{94DFFA27-C335-488B-A883-FB6FAFCECFF1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Dapr", "Common.Dapr\Common.Dapr.csproj", "{ED3A51C4-3979-4BCA-8A1B-E8D1408D63C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Diagnostics", "Common.Diagnostics\Common.Diagnostics.csproj", "{D5FC8A16-4873-4B5F-92F4-F0C211020289}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenkaichiBudokai", "TenkaichiBudokai\TenkaichiBudokai.csproj", "{1C698982-B5F5-42D4-A230-99A7171E8BBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{E75E7ADF-79A7-444E-9A21-3EC8A4AD072D}"
+	ProjectSection(SolutionItems) = preProject
+		dapr\components\genki-dama-storage.yaml = dapr\components\genki-dama-storage.yaml
+		dapr\components\tenkaichibudokai-signalr.yaml = dapr\components\tenkaichibudokai-signalr.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configuration", "configuration", "{F4DD757B-A434-467C-AF99-CDAAE1659A29}"
+	ProjectSection(SolutionItems) = preProject
+		dapr\configuration\configuration.yaml = dapr\configuration\configuration.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35F2358C-0B48-408C-8D9E-46D8DFEE9BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F2358C-0B48-408C-8D9E-46D8DFEE9BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F2358C-0B48-408C-8D9E-46D8DFEE9BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F2358C-0B48-408C-8D9E-46D8DFEE9BE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5948ADFC-8457-40A4-8708-8B380EFA1A1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5948ADFC-8457-40A4-8708-8B380EFA1A1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5948ADFC-8457-40A4-8708-8B380EFA1A1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5948ADFC-8457-40A4-8708-8B380EFA1A1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C2CDDEA-D9DA-408B-81F8-36B81BE570AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C2CDDEA-D9DA-408B-81F8-36B81BE570AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C2CDDEA-D9DA-408B-81F8-36B81BE570AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C2CDDEA-D9DA-408B-81F8-36B81BE570AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{796B55FA-2D35-4AAA-A742-0E004703C547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{796B55FA-2D35-4AAA-A742-0E004703C547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{796B55FA-2D35-4AAA-A742-0E004703C547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{796B55FA-2D35-4AAA-A742-0E004703C547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED3A51C4-3979-4BCA-8A1B-E8D1408D63C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED3A51C4-3979-4BCA-8A1B-E8D1408D63C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED3A51C4-3979-4BCA-8A1B-E8D1408D63C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED3A51C4-3979-4BCA-8A1B-E8D1408D63C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5FC8A16-4873-4B5F-92F4-F0C211020289}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5FC8A16-4873-4B5F-92F4-F0C211020289}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5FC8A16-4873-4B5F-92F4-F0C211020289}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5FC8A16-4873-4B5F-92F4-F0C211020289}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C698982-B5F5-42D4-A230-99A7171E8BBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C698982-B5F5-42D4-A230-99A7171E8BBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C698982-B5F5-42D4-A230-99A7171E8BBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C698982-B5F5-42D4-A230-99A7171E8BBC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9C2CDDEA-D9DA-408B-81F8-36B81BE570AE} = {96A5AC66-223B-4AA1-9EC5-3E1CA2D59AF9}
+		{ED3A51C4-3979-4BCA-8A1B-E8D1408D63C5} = {96A5AC66-223B-4AA1-9EC5-3E1CA2D59AF9}
+		{D5FC8A16-4873-4B5F-92F4-F0C211020289} = {96A5AC66-223B-4AA1-9EC5-3E1CA2D59AF9}
+		{E75E7ADF-79A7-444E-9A21-3EC8A4AD072D} = {94DFFA27-C335-488B-A883-FB6FAFCECFF1}
+		{F4DD757B-A434-467C-AF99-CDAAE1659A29} = {94DFFA27-C335-488B-A883-FB6FAFCECFF1}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A70D6E29-51AD-4294-A83E-5725C902D852}
+	EndGlobalSection
+EndGlobal

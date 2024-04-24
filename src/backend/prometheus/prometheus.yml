@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'SonGokuApi'
+    static_configs:
+      - targets: ['ca-songoku']
+  - job_name: 'FreezerApi'
+    static_configs:
+      - targets: ['ca-freezer']

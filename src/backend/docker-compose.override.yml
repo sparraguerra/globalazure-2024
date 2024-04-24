@@ -1,0 +1,38 @@
+version: '3.4'
+
+services:
+  ca-songoku:
+     environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=80;8080
+      - ASPNETCORE_HTTPS_PORTS=443;8081
+      - DAPR_HTTP_PORT=3601
+      - DAPR_GRPC_PORT=60001
+      - ZIPKIN_URL=http://zipkin:9411
+      - APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=2d6a74b8-74eb-4a57-bce8-8ac8fcac4c12;IngestionEndpoint=https://westeurope-5.in.applicationinsights.azure.com/;LiveEndpoint=https://westeurope.livediagnostics.monitor.azure.com/;ApplicationId=c8d2c0df-7040-4010-9783-a6094a716187
+     ports:
+        - "8080"
+        - "80"
+        - "443"
+     volumes:
+        - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+        - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
+
+  ca-freezer:
+     environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=80;8080
+      - ASPNETCORE_HTTPS_PORTS=443;8081
+      - DAPR_HTTP_PORT=3602
+      - DAPR_GRPC_PORT=60002
+      - ZIPKIN_URL=http://zipkin:9411
+      - APPLICATIONINSIGHTS_CONNECTION_STRING=InstrumentationKey=2d6a74b8-74eb-4a57-bce8-8ac8fcac4c12;IngestionEndpoint=https://westeurope-5.in.applicationinsights.azure.com/;LiveEndpoint=https://westeurope.livediagnostics.monitor.azure.com/;ApplicationId=c8d2c0df-7040-4010-9783-a6094a716187
+     ports:
+        - "8080"
+        - "80"
+        - "443"
+     volumes:
+        - ${APPDATA}/Microsoft/UserSecrets:/root/.microsoft/usersecrets:ro
+        - ${APPDATA}/ASP.NET/Https:/root/.aspnet/https:ro
+
